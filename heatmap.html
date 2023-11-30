@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Heatmap</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .heatmap-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f9fa; /* Light gray background */
+            
+        }
+
+        .heatmap-image {
+            max-width: 100%;
+            max-height: 100%;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+            border-radius: 10px; /* Add rounded corners */
+            
+        }
+
+        footer {
+            background-color: #343a40; /* Dark gray background */
+            color: #ffffff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">
+            <img src="https://www.freeiconspng.com/thumbs/anime-png/anime-png-10.png" alt="Logo" style="width:100px;">
+            Sentixplorer
+        </a>
+    
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/classification_report">Classification Report</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/class_distribution">Class Distribution</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/heatmap">Heatmap</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/feature_identity">Feature Importance</a>
+            </li>
+        </ul>
+    </nav>
+    
+    <div class="heatmap-container">
+        <img src="{{ url_for('static', filename='heatmap.png') }}" alt="Heatmap" class="heatmap-image" width="800" height="500">
+    </div>
+    <footer>
+        &copy; 2023-Sentixplorer
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
